@@ -1,0 +1,39 @@
+﻿@model List<Cliente>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    <a href="@Url.Action("Nuevo", "Cliente")" class="btn btn-primary right">Nuevo</a>
+    Listado de Clientes
+</h2>
+
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Codigo</td>
+            <td>Nombre</td>
+            <td>Email</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var cliente in Model)
+         {    
+        <tr>
+            <td>@cliente.codcli</td>
+            <td>@cliente.nomcli</td>
+            <td>@cliente.email</td>
+            <td>
+                <a href="@Url.Action("Actualizar", "Cliente", new { id = cliente.codcli })" class="btn btn-success right">Actualizar</a>
+                <a href="@Url.Action("Eliminar", "Cliente", new { id = cliente.codcli })" class="btn btn-danger right">Eliminar</a>
+                <a href="@Url.Action("Detalle", "Cliente", new { id = cliente.codcli })" class="btn btn-default right">Ver detalle</a>
+            </td>
+        </tr>
+         }
+    </tbody>
+</table>
+

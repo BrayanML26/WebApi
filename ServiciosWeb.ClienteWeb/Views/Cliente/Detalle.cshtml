@@ -1,0 +1,31 @@
+﻿@model Cliente
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle Cliente</h2>
+
+<hr />
+
+<div class="form-group">
+    <label>Codigo: </label>
+    @Model.codcli
+</div>
+<div class="form-group">
+    <label>Nombre: </label>
+    @Model.nomcli
+</div>
+<div class="form-group">
+    <label>Email: </label>
+    @Model.email
+<div class="form-group">
+    <label>Direccion: </label>
+    @Model.direccion
+</div>
+<div class="form-group">
+    <label>Status: </label>
+    @Model.status
+</div>
+<div class="form-group">
+    <a href="@Url.Action("Index","Cliente")">Regresar</a>
+</div>
